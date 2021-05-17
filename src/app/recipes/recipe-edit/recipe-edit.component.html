@@ -1,0 +1,85 @@
+<div class="row">
+    <div class="col-xs-12">
+        <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-xs-12">
+                    <button type="submit" class="btn btn-success" [disabled]="!recipeForm.valid">Save</button>&nbsp;
+                    <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="name">Title</label>
+                        <input
+                            type="text"
+                            id="name"
+                            class="form-control"
+                            formControlName="name">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12">
+                  <div class="form-group">
+                      <label for="description">Description</label>
+                      <textarea
+                          id="description"
+                          formControlName="description"
+                          class="form-control"
+                          row="6"></textarea>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label for="priorityLevel">Priority Level</label>
+                    <select
+                        id="priorityLevel"
+                        class="form-control"
+                        formControlName="priorityLevel">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+              <div class="form-group">
+                  <label for="dateOfCompletion">Date Of Completion</label>
+                  <input
+                  type="date"
+                  id="dateOfCompletion"
+                  class="form-control"
+                  formControlName="dateOfCompletion">
+              </div>
+          </div>
+      </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="form-group">
+                        <label for="imagePath">Image URL</label>
+                        <input
+                            type="text"
+                            id="imagePath"
+                            formControlName="imagePath"
+                            class="form-control"
+                            #imagePath>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <img [src]="imagePath.value" class="img-responsive" />
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="nav-header">
+            <a href="#" class="navbar-brand">Todo List System</a>
+        </div>
+
+        <div class="navbar-default">
+            <ul class="nav navbar-nav">
+                <li routerLinkActive="active" *ngIf="isAuthenticated"><a routerLink="/recipes">Tasks</a></li>
+                <li routerLinkActive="active" *ngIf="!isAuthenticated"><a routerLink="/auth">Authenticate</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" *ngIf="isAuthenticated">
+                <li>
+                    <a (click)="onLogout()">Logout</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>

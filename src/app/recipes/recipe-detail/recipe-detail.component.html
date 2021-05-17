@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-xs-12">
+        <img
+            [src]="fRecipe.imagePath"
+            alt="{{ fRecipe.name }"
+            class="img-responsive"
+            >
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <h1>{{ fRecipe.name }}</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="btn-group" appDropdown>
+            <button type="button"
+                    class="btn btn-primary dropdown-toggle">
+                    Manage Task <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                 <li><a [routerLink]="['/recipes', id, 'edit']">Edit Task</a></li>
+                 <li><a (click)="onDelete()">Delete Task</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-xs-12">
+            {{ fRecipe.description }}
+    </div>
+</div>
+<br>
+<div class="row">
+        <div class="col-xs-12">
+           <ul class="list-group">
+               <li class="list-group-item" *ngFor='let ingredient of fRecipe.ingredients'>
+                    {{ ingredient.name }} - ({{ ingredient.amount }})
+               </li>
+           </ul>
+        </div>
+</div>
